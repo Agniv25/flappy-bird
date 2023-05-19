@@ -1,0 +1,26 @@
+* {
+  padding: 0%;
+  margin: 0;
+}
+.gamecontainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+#mycanvas {
+  background-color: white;
+}
+.score {
+  color: white;
+
+  font-size: 20px;
+  position: absolute;
+  left: 512px;
+  top: 40px;
+}
+h1 {
+  position: absolute;
+}

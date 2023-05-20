@@ -122,6 +122,7 @@ document.addEventListener("keydown", () => {
     pipeVelocity = 2;
     score.innerHTML = "";
     score1 = 0;
+
     gameplay = 1;
   }
 });

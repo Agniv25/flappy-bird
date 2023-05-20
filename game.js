@@ -140,7 +140,8 @@ function reload() {
   score1 = 0;
   gravity = 0;
   bv = 0;
-  by = 50;
+  bx = 50;
+  by = 100;
   pipeVelocity = 0;
   draw();
 }

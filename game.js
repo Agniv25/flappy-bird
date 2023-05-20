@@ -4,7 +4,6 @@ var count = 0;
 var score = document.querySelector(".score");
 var head = document.querySelector("h1");
 var gameplay = 0;
-var new1 = 5;
 //bird movements initialization
 let bx = 50;
 let by = 100;
@@ -72,20 +71,25 @@ function draw() {
         (by + 24 >= pipe[i].y + upper.height * 2 + 120 &&
           by + 24 <= canvas.height - 122))
     ) {
-      window.location.reload();
+      reload();
+      return;
     }
 
     // calculating the score
     if (pipe[i].x < 40 && pipe[i].x >= 38) {
-      score.innerHTML = "Score " + ++score1;
+      score1++;
     }
 
     pipe[i].x -= pipeVelocity;
   }
 
+  //updating the score
+  score.innerHTML = "Score " + score1;
+
   //   check if the bird collides with the ground or not
   if (by + 24 >= canvas.height - 122) {
-    window.location.reload();
+    reload();
+    return;
   }
   //pushing new pipes
   if (count >= 60) {
@@ -121,15 +125,21 @@ document.addEventListener("keydown", () => {
     head.innerHTML = "";
     gravity = -0.125;
     pipeVelocity = 2;
-    score.innerHTML = "";
-    score1 = 0;
+    bv = 0;
 
     gameplay = 1;
   }
 });
 
 //functions
-function collided() {
-  window.location.reload();
-  console.log("hello");
+function reload() {
+  gameplay = 0;
+  head.innerHTML = "press any key to continue";
+  pipe.length = 0;
+  pipe = [{ x: 500, y: -80 }];
+  score1 = 0;
+  gravity = 0;
+  bv = 0;
+  pipeVelocity = 0;
+  draw();
 }

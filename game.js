@@ -4,6 +4,7 @@ var count = 0;
 var score = document.querySelector(".score");
 var head = document.querySelector("h1");
 var gameplay = 0;
+var new1 = 5;
 //bird movements initialization
 let bx = 50;
 let by = 100;

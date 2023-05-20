@@ -8,12 +8,12 @@ var gameplay = 0;
 let bx = 50;
 let by = 100;
 let gravity = 0; //gravity: -0.2
-let bv = 0;
+let bv = 2;
 var score1 = 0;
 
 //pipe movements
 pipeVelocity = 0; //pipevelocity: 2;
-pipe = [{ x: 288, y: -80 }];
+pipe = [{ x: 500, y: -80 }];
 
 //loading the images
 const bg = new Image();
@@ -30,9 +30,11 @@ lower.src = "images/lower.png";
 
 //adding eventListener
 document.addEventListener("keydown", (e) => {
-  console.log(e);
+  if (e.repeat) {
+    return;
+  }
   if (e.code == "Space") {
-    bv -= 5;
+    bv -= 4;
   }
 });
 
@@ -116,7 +118,7 @@ draw();
 document.addEventListener("keydown", () => {
   if (gameplay == 0) {
     head.innerHTML = "";
-    gravity = -0.2;
+    gravity = -0.125;
     pipeVelocity = 2;
     score.innerHTML = "";
     score1 = 0;
